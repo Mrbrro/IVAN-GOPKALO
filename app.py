@@ -5,7 +5,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # ПІДКЛЮЧЕННЯ ДО SUPABASE
-app.config["SQLALCHEMY_DATABASE_URI"] = postgresql://postgres.dmbpauzbykkuntrwyvuk:[sasharogacov-10]@aws-0-eu-north-1.pooler.supabase.com:6543/postgres
+app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres.dmbpauzbykkuntrwyvuk:[sasharogacov-10]@aws-0-eu-north-1.pooler.supabase.com:6543/postgres"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app)
 
