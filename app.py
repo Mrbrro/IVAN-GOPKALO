@@ -3,7 +3,8 @@ from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///GOPKALO.db"
+import os
+app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///" + os.path.join('/tmp', 'GOPKALO.db')
 db = SQLAlchemy(app)
 
 class Article(db.Model):
