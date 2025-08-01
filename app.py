@@ -92,8 +92,8 @@ def create():
 
 if __name__ == "__main__":
     app.run(debug=False)
-    else:
-        return render_template('create.html')
+else:
+    return render_template('create.html')
 
 if __name__ == "__main__":
     app.run(debug=False)
