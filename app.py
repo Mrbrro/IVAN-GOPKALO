@@ -25,8 +25,11 @@ def index():
 
 @app.route('/post')
 def post():
-    articles = Article.query.order_by(Article.date.desc()).all()
-    return render_template('post.html', articles=articles)
+    try:
+         articles = Article.query.order_by(Article.date.desc()).all()
+        return render_template('post.html', articles=articles)
+except Exception as e:
+        return f"<h2>❌ ПОМИЛКА:</h2><pre>{e}</pre>"
 
 
 @app.route('/post/<int:id>')
