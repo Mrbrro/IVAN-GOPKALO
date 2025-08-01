@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Пости
+{% endblock %}
+{% block body %}
+<div class="container mt-5">
+    <div class="text-center">
+        <h1> Всі історії Гопкала </h1>
+    </div>
+
+    {% if articles|length > 0 %}
+
+    {% for el in articles %}
+    <div class="alert alert-info">
+        <h2>{{ el.title }}</h2>
+        <p> {{ el.intro }}</p>
+        <p><b> Дата: {{ el.date.date() }}</b></p>
+        <a href="/post/{{ el.id }}" class="btn btn-warning">Відкрити</a>
+    </div>
+    {% endfor %}
+    {% else %}
+    <div class="text-center">
+        <p> Немає історій</p>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}
